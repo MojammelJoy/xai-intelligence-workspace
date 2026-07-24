@@ -1,9 +1,10 @@
 "use client";
 
 import { motion, type HTMLMotionProps } from "framer-motion";
+import { EASE_OUT } from "@/constants/motion";
 import { useDashboardMotion } from "./use-dashboard-motion";
 
-const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
+const EASE = EASE_OUT;
 
 interface DashboardRevealProps extends HTMLMotionProps<"div"> {
   delay?: number;

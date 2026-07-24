@@ -1,6 +1,7 @@
 import type { Variants } from "framer-motion";
+import { EASE_OUT } from "@/constants/motion";
 
-const REVEAL_EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
+const REVEAL_EASE = EASE_OUT;
 
 export function createStaggerContainerVariants(reduceMotion: boolean): Variants {
   return {

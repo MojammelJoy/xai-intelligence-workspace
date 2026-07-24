@@ -2,10 +2,11 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, type HTMLMotionProps } from "framer-motion";
+import { EASE_OUT } from "@/constants/motion";
 import { useInView } from "@/hooks/use-in-view";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 
-const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
+const EASE = EASE_OUT;
 
 interface WowRevealProps extends HTMLMotionProps<"div"> {
   delay?: number;

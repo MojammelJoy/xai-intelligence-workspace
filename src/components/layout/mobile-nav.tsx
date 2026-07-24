@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useEffect, useId, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { EASE_OUT } from "@/constants/motion";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import { cn } from "@/utils/cn";
 
@@ -91,7 +92,7 @@ export function MobileNav({ navLinks, activeId, onNavigate }: MobileNavProps) {
 
   const panelTransition = prefersReducedMotion
     ? { duration: 0.01 }
-    : { duration: 0.3, ease: [0.22, 1, 0.36, 1] as const };
+    : { duration: 0.3, ease: EASE_OUT };
   const backdropTransition = prefersReducedMotion ? { duration: 0.01 } : { duration: 0.2 };
   const panelOffscreen = prefersReducedMotion ? { opacity: 0 } : { x: "100%" };
   const panelOnscreen = prefersReducedMotion ? { opacity: 1 } : { x: 0 };

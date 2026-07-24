@@ -3,6 +3,7 @@
 import { forwardRef } from "react";
 import { motion } from "framer-motion";
 import { ACCENT_HEX, MUTED_FOREGROUND_HEX } from "@/constants/colors";
+import { EASE_OUT } from "@/constants/motion";
 import type { WowStage } from "@/constants/wow-stages";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 
@@ -13,7 +14,7 @@ interface WowStageItemProps {
   revealDelay: number;
 }
 
-const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1];
+const EASE = EASE_OUT;
 
 export const WowStageItem = forwardRef<HTMLLIElement, WowStageItemProps>(function WowStageItem(
   { stage, isActive, isRevealed, revealDelay },
